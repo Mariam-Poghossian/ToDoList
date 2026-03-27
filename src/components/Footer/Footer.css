@@ -1,0 +1,45 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--space-md) 0 var(--space-lg);
+  background: linear-gradient(to top, var(--color-bg) 60%, transparent);
+  pointer-events: none;
+}
+
+.footer__btn-add {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  margin-right: -100px; 
+  margin-bottom: 50px;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.45);
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  pointer-events: all;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+}
+
+.footer__btn-add:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.2);
+  box-shadow: 0 6px 22px rgba(59, 130, 246, 0.55);
+}
+
+.footer__btn-add:active {
+  transform: scale(0.95);
+}
+
+.footer__btn-add-icon {
+  margin-top: -2px; 
+}

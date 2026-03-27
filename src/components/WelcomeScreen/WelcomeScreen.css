@@ -1,0 +1,83 @@
+.welcome {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+}
+
+.welcome__card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px 40px 40px;
+  max-width: 500px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.welcome__lottie {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.welcome__lottie svg {
+  display: block;       
+  overflow: visible;   
+}
+
+.welcome__question {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 28px;
+  line-height: 1.5;
+
+}
+
+.welcome__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.welcome__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.welcome__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.welcome__btn--primary {
+  background: #5b6af0;
+  color: white;
+}
+
+.welcome__btn--secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.welcome__btn--import {
+  background: transparent;
+  color: #5b6af0;
+  border: 2px solid #5b6af0;
+}
+
+.welcome__badge {
+  background: rgba(255,255,255,0.3);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,301 @@
+.task-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+  animation: slideIn 0.2s ease both;
+}
+
+.task-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.task-item--expanded {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-mid);
+}
+
+.task-item--late {
+  border-left: 3px solid #F43F5E;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.task-item__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.task-item__statut {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+}
+
+.task-item__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.task-item__titre {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-item__titre--done {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.task-item__echeance {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.task-item__echeance--late {
+  color: #F43F5E;
+  font-weight: 500;
+}
+
+.task-item__toggle {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.task-item__toggle:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-mid);
+  color: var(--color-primary);
+}
+
+.task-item__toggle--open {
+  transform: rotate(90deg);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-mid);
+  color: var(--color-primary);
+}
+
+.task-item__dossiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 var(--space-md) var(--space-sm);
+}
+
+.dossier-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.dossier-chip:hover {
+  opacity: 0.8;
+  transform: scale(1.04);
+}
+
+.task-item__more {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.task-item__details {
+  padding: 0 var(--space-md) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-sm);
+  animation: fadeIn 0.15s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.task-item__description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.task-item__equipiers {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.equipier-chip {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-mid);
+  color: #1D4ED8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.task-item__equipiers-label {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.task-item__erreur {
+  font-size: 0.8125rem;
+  color: #F43F5E;
+  background: #FFF1F2;
+  border: 1px solid #FECDD3;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+}
+
+.task-item__input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border-mid);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  transition: border-color var(--transition);
+}
+
+.task-item__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.task-item__input--date {
+  font-size: 0.875rem;
+}
+
+.task-item__textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border-mid);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  resize: vertical;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  transition: border-color var(--transition);
+}
+
+.task-item__textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.task-item__actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding-top: var(--space-xs);
+}
+
+.task-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.task-btn--edit {
+  background: var(--color-surface-2);
+  border-color: var(--color-border);
+  color: var(--color-text-secondary);
+}
+.task-btn--edit:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-mid);
+  color: var(--color-primary);
+}
+
+.task-btn--delete {
+  background: #FFF1F2;
+  border-color: #FECDD3;
+  color: #F43F5E;
+}
+.task-btn--delete:hover {
+  background: #ff143b;
+  border-color: #ff143b;
+  color: #fff;
+}
+
+.task-btn--save {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+}
+.task-btn--save:hover {
+  background: var(--color-primary-dark);
+}
+
+.task-btn--cancel {
+  background: var(--color-surface-2);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+.task-btn--cancel:hover {
+  color: var(--color-text-primary);
+}
