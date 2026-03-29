@@ -39,7 +39,7 @@ function WelcomeScreen({ onLoadBackup, onStartFresh, onImport }) {
             className="welcome__btn welcome__btn--primary"
             onClick={onLoadBackup}
           >
-            📦 Charger le backup du prof
+            Charger le backup du prof
             <span className="welcome__badge">{backupData.taches.length} tâches</span>
           </button>
 
@@ -47,14 +47,14 @@ function WelcomeScreen({ onLoadBackup, onStartFresh, onImport }) {
             className="welcome__btn welcome__btn--secondary"
             onClick={onStartFresh}
           >
-            ✨ Démarrer de zéro
+            Démarrer de zéro
           </button>
 
           <button
             className="welcome__btn welcome__btn--import"
             onClick={() => fileInputRef.current.click()}
           >
-            📂 Importer mon propre backup
+            Importer mon propre backup
           </button>
 
           <input

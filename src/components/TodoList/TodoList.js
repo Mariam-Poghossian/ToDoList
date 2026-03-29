@@ -13,12 +13,12 @@ function TodoList() {
 
   const [filtresOuverts, setFiltresOuverts] = useState(false);
 
-  const toggleEtat = (etat) => {
+    const toggleEtat = (etat) => {
     const next = filtre.etats.includes(etat)
-      ? filtre.etats.filter(e => e !== etat)
-      : [...filtre.etats, etat];
+      ? []  
+      : [etat]; 
     setFiltreKey('etats', next);
-  };
+    };
 
   const toggleDossier = (id) => {
     const next = filtre.dossiers.includes(id)
@@ -28,9 +28,8 @@ function TodoList() {
   };
 
   const nbFiltresActifs =
-    filtre.etats.length +
-    filtre.dossiers.length +
-    (filtre.enCours ? 1 : 0);
+  filtre.etats.length +
+  filtre.dossiers.length;
 
   return (
     <div className="todo-list">
@@ -61,7 +60,7 @@ function TodoList() {
           className={`filter-toggle ${filtresOuverts ? 'filter-toggle--open' : ''} ${nbFiltresActifs > 0 ? 'filter-toggle--has-filters' : ''}`}
           onClick={() => setFiltresOuverts(o => !o)}
         >
-          <span className="filter-toggle__icon">⚡</span>
+          <span className="filter-toggle__icon"></span>
           Filtres
           {nbFiltresActifs > 0 && (
             <span className="filter-toggle__badge">{nbFiltresActifs}</span>
@@ -71,18 +70,6 @@ function TodoList() {
 
       {filtresOuverts && (
         <div className="todo-list__filters">
-
-          <div className="filter-group">
-            <span className="filter-group__label">Affichage</span>
-            <div className="filter-group__chips">
-              <button
-                className={`filter-chip ${filtre.enCours ? 'filter-chip--active' : ''}`}
-                onClick={() => setFiltreKey('enCours', !filtre.enCours)}
-              >
-                En cours uniquement
-              </button>
-            </div>
-          </div>
 
           <div className="filter-group">
             <span className="filter-group__label">Statut</span>
@@ -108,14 +95,14 @@ function TodoList() {
                     key={d.id}
                     className={`filter-chip ${filtre.dossiers.includes(d.id) ? 'filter-chip--active' : ''}`}
                     style={filtre.dossiers.includes(d.id) ? {
-                      background: d.couleur,
-                      color: d.couleurText,
-                      borderColor: d.couleur,
-                    } : {}}
+                    background: d.color,
+                    color: '#000',  
+                    borderColor: d.color,
+                  } : {}}
                     onClick={() => toggleDossier(d.id)}
                   >
-                    {d.pictogramme && <span>{d.pictogramme}</span>}
-                    {d.titre}
+                    {d.icon && <span>{d.icon}</span>}   
+                    {d.title}  
                   </button>
                 ))}
               </div>

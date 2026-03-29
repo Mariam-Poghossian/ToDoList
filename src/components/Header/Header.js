@@ -12,7 +12,6 @@ function Header() {
     <header className="header">
       <div className="header__top">
         <div className="header__brand">
-          <span className="header__logo">✓</span>
           <h1 className="header__title">TodoList App</h1>
         </div>
 

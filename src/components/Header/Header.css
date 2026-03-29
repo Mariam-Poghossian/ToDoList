@@ -22,22 +22,9 @@
   gap: var(--space-sm);
 }
 
-.header__logo {
-  width: 32px;
-  height: 32px;
-  background: var(--color-primary);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
 
 .header__title {
-  font-size: 1.125rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--color-text-primary);
   letter-spacing: -0.01em;
@@ -55,7 +42,7 @@
 .toggle-btn {
   padding: 5px 14px;
   border-radius: var(--radius-full);
-  font-size: 0.8125rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--color-text-muted);
   background: transparent;
@@ -95,7 +82,7 @@
 }
 
 .stat-chip__value {
-  font-size: 0.9375rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-primary);
   font-variant-numeric: tabular-nums;
@@ -106,7 +93,7 @@
 }
 
 .stat-chip__label {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   color: var(--color-text-muted);
   font-weight: 400;
 }
@@ -134,7 +121,7 @@
 }
 
 .progress-label {
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   color: var(--color-text-muted);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
@@ -149,13 +136,13 @@
 }
 
 .btn-reset {
-  width: 32px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
   border-radius: var(--radius-full);
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
   color: var(--color-text-muted);
-  font-size: 1rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,4 +153,46 @@
   background: #FFF1F2;
   border-color: #FECDD3;
   color: #F43F5E;
+}
+
+
+
+@media (max-width: 600px) {
+  .header__top {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .header__title {
+    font-size: 1.25rem;
+  }
+
+  .toggle-btn {
+    font-size: 0.875rem;
+    padding: 4px 10px;
+  }
+
+  .header__stats {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .stat-chip__value {
+    font-size: 1rem;
+  }
+
+  .stat-chip__label {
+    font-size: 0.875rem;
+  }
+
+  .progress-label {
+    font-size: 0.875rem;
+    min-width: 60px;
+  }
+
+  .btn-reset {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
 }

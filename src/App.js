@@ -27,10 +27,10 @@ const sortTaches = (taches, filtre) => {
 };
 
 const FILTRE_INITIAL = {
-  etats:     [],
-  dossiers:  [],
-  enCours:   true,
-  tri:       TRIS.DATE_ECHEANCE,
+  etats: [],       
+  dossiers: [],
+  enCours: true,  
+  tri: TRIS.DATE_ECHEANCE,
   croissant: false,
 };
 
@@ -95,20 +95,27 @@ function App() {
     if (ok) { setTaches([]); setDossiers([]); setRelations([]); setFiltre(FILTRE_INITIAL); }
   }, []);
 
-  const tachesFiltrees = useMemo(() => {
-    let resultat = [...taches];
-    if (filtre.enCours)
-      resultat = resultat.filter(t => !ETATS_TERMINES.includes(t.etat));
-    if (filtre.etats.length > 0)
-      resultat = resultat.filter(t => filtre.etats.includes(t.etat));
-    if (filtre.dossiers.length > 0) {
-      const tachesAvecDossier = relations
-        .filter(r => filtre.dossiers.includes(r.dossier))
-        .map(r => r.tache);
-      resultat = resultat.filter(t => tachesAvecDossier.includes(t.id));
-    }
-    return sortTaches(resultat, filtre);
-  }, [taches, relations, filtre]);
+const tachesFiltrees = useMemo(() => {
+  let resultat = taches.map(t => ({
+    ...t,
+    etat: t.etat ?? 'À faire',
+  }));
+
+  if (filtre.enCours)
+    resultat = resultat.filter(t => !ETATS_TERMINES.includes(t.etat));
+
+  if (filtre.etats.length > 0)
+    resultat = resultat.filter(t => filtre.etats.includes(t.etat));
+
+  if (filtre.dossiers.length > 0) {
+    const tachesAvecDossier = relations
+      .filter(r => filtre.dossiers.includes(r.dossier))
+      .map(r => r.tache);
+    resultat = resultat.filter(t => tachesAvecDossier.includes(t.id));
+  }
+
+  return sortTaches(resultat, filtre);
+}, [taches, relations, filtre]);
 
   const nbTotal    = taches.length;
   const nbNonFinis = taches.filter(t => !ETATS_TERMINES.includes(t.etat)).length;

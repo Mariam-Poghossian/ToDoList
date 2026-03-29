@@ -44,7 +44,7 @@ function FolderItem({ dossier }) {
           className="folder-item__icon"
           style={{ background: bgColor, color: textColor }}
         >
-          {dossier.icon || '📁'}
+          {dossier.icon === 'project' ? '📁' : dossier.icon || '📁'}
         </div>
 
         <div className="folder-item__info">

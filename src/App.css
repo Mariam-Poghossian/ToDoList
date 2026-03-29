@@ -1,8 +1,11 @@
+
+
+
 .app-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 680px;
+  max-width: 900px;  
   margin: 0 auto;
   padding: 0 var(--space-md);
 }
@@ -18,12 +21,12 @@
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.5rem;    
   color: var(--color-text-primary);
 }
 
 .placeholder-header .stats {
-  font-size: 0.8125rem;
+  font-size: 1.125rem;      
   font-weight: 400;
   color: var(--color-text-muted);
 }
@@ -44,12 +47,12 @@
 }
 
 .btn-add {
-  width: 52px;
-  height: 52px;
+  width: 68px;       
+  height: 68px;          
   border-radius: var(--radius-full);
   background: var(--color-primary);
   color: #fff;
-  font-size: 1.625rem;
+  font-size: 2rem;        
   font-weight: 300;
   display: flex;
   align-items: center;
@@ -81,7 +84,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
-  max-width: 380px;
+  max-width: 560px;       
   width: 100%;
   text-align: center;
   box-shadow: var(--shadow-lg);
@@ -89,24 +92,18 @@
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .start-card__icon {
-  font-size: 2.5rem;
+  font-size: 3.5rem;      
   margin-bottom: var(--space-md);
   display: block;
 }
 
 .start-card__title {
-  font-size: 1.75rem;
+  font-size: 2.5rem;  
   font-weight: 600;
   color: var(--color-text-primary);
   margin-bottom: var(--space-xs);
@@ -114,7 +111,7 @@
 }
 
 .start-card__subtitle {
-  font-size: 0.9375rem;
+  font-size: 1.375rem;    
   color: var(--color-text-muted);
   margin-bottom: var(--space-xl);
 }
@@ -130,9 +127,9 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: 12px var(--space-lg);
+  padding: 16px var(--space-lg);
   border-radius: var(--radius-md);
-  font-size: 0.9375rem;
+  font-size: 1.375rem;   
   font-weight: 500;
   transition: all var(--transition);
   border: 1px solid transparent;
@@ -161,5 +158,38 @@
 }
 
 .btn__icon {
-  font-size: 1rem;
+  font-size: 1.5rem;    
+}
+
+@media (max-width: 600px) {
+  .app-layout {
+    padding: 0 10px;
+  }
+
+  .placeholder-header {
+    font-size: 1.1rem;
+  }
+
+  .placeholder-header .stats {
+    font-size: 0.875rem;
+  }
+
+  .btn-add {
+    width: 54px;
+    height: 54px;
+    font-size: 1.5rem;
+  }
+
+  .start-card__title {
+    font-size: 1.75rem;
+  }
+
+  .start-card__subtitle {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
 }

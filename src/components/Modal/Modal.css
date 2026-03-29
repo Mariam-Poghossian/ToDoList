@@ -94,3 +94,25 @@
 .modal-card__body {
   padding: var(--space-lg);
 }
+
+@media (max-width: 600px) {
+  .modal-overlay {
+    padding: 0 12px;
+  }
+
+  .modal-card {
+    max-height: 75vh;
+  }
+
+  .modal-card__header {
+    padding: var(--space-md);
+  }
+
+  .modal-card__body {
+    padding: var(--space-md);
+  }
+
+  .modal-card__titre {
+    font-size: 1rem;
+  }
+}

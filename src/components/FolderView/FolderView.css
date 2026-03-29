@@ -14,7 +14,7 @@
 }
 
 .folder-view__count {
-  font-size: 0.8125rem;
+  font-size: 1.5rem;
   color: var(--color-text-muted);
   font-weight: 500;
 }
@@ -28,7 +28,7 @@
   background: var(--color-primary-light);
   border: 1px solid var(--color-primary-mid);
   color: var(--color-primary);
-  font-size: 0.8125rem;
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   transition: all var(--transition);
@@ -57,15 +57,15 @@
 }
 
 .folder-view__empty-icon {
-  font-size: 2rem;
+  font-size: 10rem; /*la taille n'aggraids pas j'avais 2rem j'ai mis 10 uaucun changement visuel pourquoi*/
 }
 
 .folder-view__empty p {
-  font-size: 0.9375rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-text-secondary);
 }
 
 .folder-view__empty span {
-  font-size: 0.8125rem;
+  font-size: 1.5rem;
 }

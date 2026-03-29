@@ -26,7 +26,7 @@
 .tri-btn {
   padding: 4px 12px;
   border-radius: var(--radius-full);
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--color-text-muted);
   background: transparent;
@@ -50,7 +50,7 @@
   gap: 6px;
   padding: 6px 14px;
   border-radius: var(--radius-full);
-  font-size: 0.8125rem;
+  font-size: 1.2rem;
   font-weight: 500;
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
@@ -127,7 +127,7 @@
 .filter-group__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
 }
 
 .filter-chip {
@@ -188,17 +188,17 @@
 }
 
 .todo-list__empty-icon {
-  font-size: 2rem;
+  font-size: 15rem; /*j'aggrandis le rem mais rien ne change...*/
 }
 
 .todo-list__empty p {
-  font-size: 0.9375rem;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-text-secondary);
 }
 
 .todo-list__empty span {
-  font-size: 0.8125rem;
+  font-size: 2rem;
 }
 
 .task-placeholder {
@@ -247,4 +247,26 @@
   padding: 3px 10px;
   border-radius: var(--radius-full);
   white-space: nowrap;
+}
+
+
+@media (max-width: 600px) {
+  .todo-list__toolbar {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .toolbar__tri {
+    flex-wrap: wrap;
+  }
+
+  .tri-btn {
+    font-size: 0.875rem;
+    padding: 4px 8px;
+  }
+
+  .filter-toggle {
+    font-size: 0.875rem;
+    padding: 5px 10px;
+  }
 }
